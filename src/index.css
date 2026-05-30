@@ -4,32 +4,26 @@
   --font-sans: 'Outfit', sans-serif;
   --font-serif: 'Playfair Display', serif;
 
-  /* Colors */
-  --bg-primary: #0F0F0F;
-  --bg-secondary: #161616;
-  --bg-tertiary: #1E1E1E;
+  /* Colors - Warm Plum, Mauve, Wine & Soft Cream */
+  --bg-primary: #120D16;   /* Deep Plum/Eggplant */
+  --bg-secondary: #1C1522; /* Medium Mauve Dark */
+  --bg-tertiary: #271E30;  /* Lighter Accent Grape */
   
-  --text-primary: #F5F5F7;
-  --text-secondary: #A1A1A6;
-  --text-muted: #6E6E73;
+  --text-primary: #FAF6FE;
+  --text-secondary: #DBCFE3;
+  --text-muted: #8E7F96;
   
-  /* Dynamic highlight accent - can be overridden by dynamic classes */
-  --accent-rgb: 212, 175, 55; /* Warm gold default */
+  /* Paint highlight color: Warm Vivid Rose / Watercolor Magenta */
+  --accent-rgb: 224, 86, 137; 
   --accent: rgb(var(--accent-rgb));
-  --accent-light: rgba(var(--accent-rgb), 0.15);
+  --accent-light: rgba(var(--accent-rgb), 0.18);
   
   --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.25s ease;
   
-  --glass-bg: rgba(22, 22, 22, 0.7);
+  --glass-bg: rgba(28, 21, 34, 0.75);
   --glass-border: rgba(255, 255, 255, 0.08);
 }
-
-/* Palette Overrides */
-.accent-gold { --accent-rgb: 212, 175, 55; }
-.accent-emerald { --accent-rgb: 16, 185, 129; }
-.accent-cyan { --accent-rgb: 6, 182, 212; }
-.accent-rose { --accent-rgb: 244, 63, 94; }
 
 * {
   box-sizing: border-box;
@@ -56,7 +50,6 @@ button {
   font-family: inherit;
 }
 
-/* Layout Utilities */
 .container {
   width: 100%;
   max-width: 1200px;
@@ -74,12 +67,6 @@ button {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
   100% { transform: translateY(0px); }
-}
-
-@keyframes pulse-ring {
-  0% { transform: scale(0.95); opacity: 0.5; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(0.95); opacity: 0.5; }
 }
 
 .animate-fade-in {

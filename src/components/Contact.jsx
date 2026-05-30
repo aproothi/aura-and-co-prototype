@@ -11,7 +11,6 @@ export default function Contact() {
     if (!formData.name || !formData.email) return;
 
     setIsSubmitting(true);
-    // Simulate premium async transaction
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitted(true);
@@ -38,8 +37,7 @@ export default function Contact() {
               letterSpacing: '2px',
               textTransform: 'uppercase',
               marginBottom: '1rem',
-              transition: 'color 0.5s'
-            }}>PARTNER WITH US</span>
+            }}>CUSTOM EVENTS</span>
 
             <h2 style={{
               fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
@@ -49,7 +47,7 @@ export default function Contact() {
               marginBottom: '1.5rem',
               lineHeight: 1.15
             }}>
-              Let’s create something breathtaking
+              Want to host a custom corporate gala or birthday party?
             </h2>
 
             <p style={{
@@ -59,12 +57,12 @@ export default function Contact() {
               marginBottom: '2rem',
               fontWeight: 300
             }}>
-              Have an idea, project blueprint, or design vision? Get in touch with our design leads today.
+              Contact our design and event leads to organize private catering, wine selection, customized studio decorations, and tailored canvas themes.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
-              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>DIRECT CONTACT</p>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 500 }}>collaborate@auraand.co</h3>
+              <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>DIRECT BOOKINGS</p>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 500 }}>events@artistryavenue.studio</h3>
             </div>
           </div>
 
@@ -97,7 +95,6 @@ export default function Contact() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   marginBottom: '1.5rem',
-                  transition: 'color 0.5s, background-color 0.5s'
                 }}>
                   <Check size={28} />
                 </div>
@@ -105,7 +102,7 @@ export default function Contact() {
                   Inquiry Received
                 </h3>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: '300px' }}>
-                  Our creative director will reach out within one business day.
+                  Our event coordinator will reach out within one business day.
                 </p>
               </div>
             ) : (
@@ -162,13 +159,13 @@ export default function Contact() {
 
                 {/* Input Message */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label htmlFor="message" style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>PROJECT DESCRIPTION</label>
+                  <label htmlFor="message" style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-secondary)' }}>EVENT DESCRIPTION</label>
                   <textarea
                     id="message"
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Tell us about your brand goals..."
+                    placeholder="Describe your target date, theme ideas, catering needs..."
                     style={{
                       backgroundColor: 'var(--bg-secondary)',
                       border: '1px solid var(--glass-border)',
@@ -191,7 +188,7 @@ export default function Contact() {
                   disabled={isSubmitting}
                   style={{
                     backgroundColor: 'var(--accent)',
-                    color: '#000',
+                    color: '#fff',
                     border: 'none',
                     borderRadius: '8px',
                     padding: '1.1rem',
@@ -213,7 +210,7 @@ export default function Contact() {
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  {isSubmitting ? 'Sending Request...' : <>Send Inquiry <Send size={16} /></>}
+                  {isSubmitting ? 'Sending Details...' : <>Send Event Inquiry <Send size={16} /></>}
                 </button>
               </form>
             )}

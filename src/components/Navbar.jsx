@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, Wine } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +48,6 @@ export default function Navbar() {
     gap: '0.4rem',
     cursor: 'pointer',
     transition: 'var(--transition-smooth)',
-    boxShadow: '0 0 0 0 var(--accent-light)',
   };
 
   return (
@@ -57,17 +56,17 @@ export default function Navbar() {
         <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <span style={{ 
             fontFamily: 'var(--font-serif)', 
-            fontSize: '1.5rem', 
+            fontSize: '1.4rem', 
             fontWeight: 700, 
             letterSpacing: '-0.5px' 
           }}>
-            AURA <span style={{ color: 'var(--accent)', transition: 'color 0.5s' }}>&amp;</span> CO.
+            ARTISTRY <span style={{ color: 'var(--accent)' }}>AVENUE</span>
           </span>
         </a>
 
         {/* Desktop Links */}
         <div style={{ display: 'none', gap: '2.5rem', alignItems: 'center' }} className="desktop-menu">
-          {['Portfolio', 'Creative Lab', 'Contact'].map((item) => (
+          {['Packages', 'Book Party', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -77,21 +76,19 @@ export default function Navbar() {
               {item}
             </a>
           ))}
-          <a href="#contact">
+          <a href="#book-party">
             <button 
               style={btnStyles}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'var(--accent)';
-                e.currentTarget.style.color = '#000';
-                e.currentTarget.style.boxShadow = '0 0 20px 4px var(--accent-light)';
+                e.currentTarget.style.color = '#fff';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = 'transparent';
                 e.currentTarget.style.color = 'var(--text-primary)';
-                e.currentTarget.style.boxShadow = '0 0 0 0 var(--accent-light)';
               }}
             >
-              Consultation <ArrowUpRight size={16} />
+              Book Event <Wine size={16} />
             </button>
           </a>
         </div>
@@ -117,7 +114,7 @@ export default function Navbar() {
           gap: '1.5rem',
           alignItems: 'center'
         }}>
-          {['Portfolio', 'Creative Lab', 'Contact'].map((item) => (
+          {['Packages', 'Book Party', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase().replace(' ', '-')}`} 
@@ -127,9 +124,9 @@ export default function Navbar() {
               {item}
             </a>
           ))}
-          <a href="#contact" onClick={() => setIsOpen(false)}>
-            <button style={{ ...btnStyles, backgroundColor: 'var(--accent)', color: '#000' }}>
-              Consultation <ArrowUpRight size={16} />
+          <a href="#book-party" onClick={() => setIsOpen(false)}>
+            <button style={{ ...btnStyles, backgroundColor: 'var(--accent)', color: '#fff' }}>
+              Book Event <Wine size={16} />
             </button>
           </a>
         </div>

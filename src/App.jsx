@@ -1,21 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Portfolio from './components/Portfolio';
-import InteractiveShowcase from './components/InteractiveShowcase';
+import Pricing from './components/Pricing';
+import BookingTool from './components/BookingTool';
 import Contact from './components/Contact';
 
 export default function App() {
-  const [activeAccent, setActiveAccent] = useState('accent-gold');
-
   return (
-    <div className={activeAccent} style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
       
       <main style={{ flex: 1 }}>
         <Hero />
-        <Portfolio />
-        <InteractiveShowcase activeAccent={activeAccent} onAccentChange={setActiveAccent} />
+        <Pricing />
+        <BookingTool />
         <Contact />
       </main>
 
@@ -34,10 +32,10 @@ export default function App() {
           justifyContent: 'space-between',
           alignItems: 'center'
         }} className="footer-flex">
-          <span>&copy; {new Date().getFullYear()} AURA &amp; CO. ALL RIGHTS RESERVED.</span>
+          <span>&copy; {new Date().getFullYear()} ARTISTRY AVENUE STUDIO. ALL RIGHTS RESERVED.</span>
           <div style={{ display: 'flex', gap: '2rem' }}>
-            <a href="#" className="footer-link">PRIVACY</a>
-            <a href="#" className="footer-link">TERMS</a>
+            <a href="#" className="footer-link">PRIVACY POLICY</a>
+            <a href="#" className="footer-link">TERMS OF USE</a>
           </div>
         </div>
       </footer>
